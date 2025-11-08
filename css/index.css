@@ -42,7 +42,6 @@ a:hover {
 
 header {
   padding: 20px 0 12px;
-  border-bottom: 3px solid var(--brand)
 }
 
 h1 {
@@ -56,7 +55,7 @@ h1 {
 }
 
 nav.toc {
-  margin: 20px 0 28px;
+  margin: 20px 0 50px;
   padding: 12px 16px;
   background: var(--card);
   border: 1px solid #e6ecf5;
@@ -382,6 +381,7 @@ footer {
 /* ケースセクション */
 #cases {
   padding: 2em 0;
+  padding-top: 0;
 }
 
 #cases .grid {
@@ -626,4 +626,141 @@ footer {
 /* 目次内の絵文字 */
 .toc-emoji {
   font-size: 1.2em;
+}
+
+/* AIサービスリンクセクション */
+.ai-services {
+  margin-top: 0;
+  padding: 20px 0;
+  padding-top: 0;
+}
+
+.ai-services h2 {
+  margin: 0 0 16px;
+  font-size: clamp(18px, 2.6vw, 24px);
+  text-align: center;
+  border-left: none;
+  padding-left: 0;
+}
+
+.ai-services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 16px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.ai-service-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 16px;
+  background: #fff;
+  border: 2px solid var(--brand);
+  border-radius: 12px;
+  text-decoration: none;
+  color: var(--ink);
+  transition: all 0.3s;
+  box-shadow: 0 2px 8px rgba(30, 102, 245, 0.1);
+}
+
+.ai-service-link:hover {
+  background: #eef3ff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(30, 102, 245, 0.2);
+  text-decoration: none;
+}
+
+.ai-service-icon {
+  font-size: 2.5em;
+  margin-bottom: 8px;
+}
+
+.ai-service-name {
+  font-size: 1.1em;
+  font-weight: 600;
+  color: var(--brand);
+}
+
+/* AIサービスモーダル */
+.ai-service-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.35);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.ai-service-modal-content {
+  position: relative;
+  background: #fff;
+  border-radius: 10px;
+  padding: 2.4em 2em 1.2em 2em;
+  min-width: 280px;
+  max-width: 500px;
+  width: 90%;
+  box-shadow: 0 6px 24px rgba(30, 102, 245, 0.1);
+}
+
+.ai-service-modal-content h3 {
+  margin-top: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.ai-service-modal-content h3 span {
+  font-size: 1.35em;
+}
+
+.ai-service-modal-content > div {
+  margin:0 0 0.5em;
+}
+
+.ai-service-modal-content a {
+  display: inline-block;
+  margin-top: 1.2em;
+  padding: 12px 24px;
+  background: var(--brand, #1e66f5);
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: all 0.2s;
+  box-shadow: 0 2px 8px rgba(30, 102, 245, 0.3);
+}
+
+.ai-service-modal-content a:hover {
+  background: #1557d4;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(30, 102, 245, 0.4);
+  text-decoration: none;
+}
+
+.ai-service-modal-content a:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 6px rgba(30, 102, 245, 0.3);
+}
+
+#closeModalBtn {
+  position: absolute;
+  top: 8px;
+  right: 14px;
+  font-size: 18px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--muted);
+  padding: 4px 8px;
+}
+
+#closeModalBtn:hover {
+  color: var(--ink);
 }
