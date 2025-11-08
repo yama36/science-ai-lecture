@@ -1,0 +1,629 @@
+:root {
+  --brand: #1e66f5;
+  --brand-light: #8ab1fa;
+  --ink: #1b1f24;
+  --muted: #5b6773;
+  --bg: #ffffff;
+  --card: #f6f8fb;
+}
+
+* {
+  box-sizing: border-box
+}
+
+html {
+  scroll-behavior: smooth
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, "Hiragino Kaku Gothic ProN", "Noto Sans JP", sans-serif;
+  line-height: 1.7
+}
+
+a {
+  color: var(--brand);
+  text-decoration: none
+}
+
+a:hover {
+  text-decoration: underline
+}
+
+.wrap {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 24px
+}
+
+header {
+  padding: 20px 0 12px;
+  border-bottom: 3px solid var(--brand)
+}
+
+h1 {
+  font-size: clamp(22px, 4vw, 34px);
+  margin: 0 0 8px
+}
+
+.lead {
+  color: var(--muted);
+  font-size: clamp(14px, 2.2vw, 18px)
+}
+
+nav.toc {
+  margin: 20px 0 28px;
+  padding: 12px 16px;
+  background: var(--card);
+  border: 1px solid #e6ecf5;
+  border-radius: 12px
+}
+
+nav.toc h2 {
+  font-size: 18px;
+  margin: 0 0 8px
+}
+
+nav.toc ul {
+  margin: 0;
+  padding-left: 18px
+}
+
+section {
+  margin: 30px 0;
+  padding: 0
+}
+
+h2 {
+  font-size: clamp(18px, 2.6vw, 24px);
+  margin: 0 0 6px;
+  padding-top: 10px;
+  border-left: 6px solid var(--brand);
+  padding-left: 10px
+}
+
+.summary {
+  color: var(--ink);
+  background: #eef3ff;
+  border: 1px solid #dbe6ff;
+  border-radius: 10px;
+  padding: 12px 14px;
+  margin: 10px 0 20px
+}
+
+.card {
+  background: #fff;
+  border: 1px solid #e8eef7;
+  border-radius: 14px;
+  padding: 16px 18px;
+  margin: 18px 0;
+  box-shadow: 0 2px 10px rgba(30, 102, 245, .05)
+}
+
+.card h3 {
+  margin: 0 0 6px;
+  font-size: clamp(16px, 2.4vw, 20px)
+}
+
+.badge {
+  display: inline-block;
+  background: var(--brand);
+  color: #fff;
+  padding: 2px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  margin-left: 6px
+}
+
+.points {
+  margin: 10px 0 0;
+  padding-left: 20px
+}
+
+.points li {
+  margin: 4px 0
+}
+
+.example {
+  margin-top: 10px;
+  color: var(--muted)
+}
+
+footer {
+  margin: 40px 0 20px;
+  color: var(--muted);
+  font-size: 14px
+}
+
+.grid {
+  display: grid;
+  gap: 16px
+}
+
+@media(min-width:800px) {
+  .grid {
+    grid-template-columns: 1fr 1fr
+  }
+}
+
+/* AI用語解説セクション専用スタイル */
+#ai-glossary .glossary-item {
+  background: linear-gradient(135deg, #f8f9fb 0%, #ffffff 100%);
+  border-left: 3px solid var(--brand-light);
+  border-radius: 8px;
+  padding: 20px 24px;
+  margin: 16px 0;
+  box-shadow: 0 1px 3px rgba(30, 102, 245, .08);
+  transition: all 0.3s
+}
+
+#ai-glossary .glossary-item:hover {
+  box-shadow: 0 4px 12px rgba(30, 102, 245, .15);
+  transform: translateY(-2px)
+}
+
+#ai-glossary .glossary-term {
+  font-size: clamp(18px, 2.8vw, 22px);
+  font-weight: 700;
+  color: var(--brand);
+  margin: 0 0 12px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #e8eef7;
+  display: flex;
+  align-items: center;
+  gap: 8px
+}
+
+#ai-glossary .glossary-term::before {
+  content: "🔤";
+  font-size: 20px;
+  opacity: 0.7
+}
+
+#ai-glossary .glossary-definition {
+  color: var(--ink);
+  margin: 12px 0;
+  line-height: 1.8;
+  padding-left: 4px
+}
+
+#ai-glossary .glossary-usage {
+  background: #f0f7ff;
+  border-left: 3px solid var(--brand);
+  border-radius: 6px;
+  padding: 12px 16px;
+  margin-top: 14px;
+  font-size: 14px;
+  color: var(--ink)
+}
+
+#ai-glossary .glossary-usage strong {
+  color: var(--brand);
+  display: block;
+  margin-bottom: 6px;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px
+}
+
+#ai-glossary .grid {
+  grid-template-columns: 1fr;
+  gap: 12px
+}
+
+@media(min-width:800px) {
+  #ai-glossary .grid {
+    grid-template-columns: 1fr 1fr
+  }
+}
+
+/* ゲームセクション専用スタイル */
+#game-section {
+  margin: 40px 0;
+  padding: 30px;
+  background: linear-gradient(135deg, #eef3ff 0%, #f8f9fb 100%);
+  border: 2px solid var(--brand);
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(30, 102, 245, .15);
+  transition: all 0.3s;
+}
+
+#game-section:hover {
+  box-shadow: 0 6px 24px rgba(30, 102, 245, .25);
+  transform: translateY(-2px);
+}
+
+#game-section h2 {
+  margin: 0 0 16px;
+  font-size: clamp(22px, 3vw, 28px);
+  color: var(--brand);
+  border: none;
+  padding: 0;
+}
+
+#game-section .game-content {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+#game-section .game-description {
+  color: var(--ink);
+  font-size: clamp(15px, 2vw, 18px);
+  line-height: 1.8;
+  margin: 0 0 24px;
+}
+
+#game-section .game-info-box {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 20px 0;
+  box-shadow: 0 2px 10px rgba(30, 102, 245, .1);
+}
+
+#game-section .game-info-box ul {
+  text-align: left;
+  display: inline-block;
+  margin: 0;
+  padding-left: 20px;
+  color: var(--muted);
+}
+
+#game-section .game-button {
+  display: inline-block;
+  background: var(--brand);
+  color: #fff;
+  padding: 16px 32px;
+  border-radius: 12px;
+  font-size: 18px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.3s;
+  box-shadow: 0 4px 12px rgba(30, 102, 245, .3);
+  margin-top: 10px;
+}
+
+#game-section .game-button:hover {
+  background: #1557d4;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(30, 102, 245, .4);
+  text-decoration: none;
+}
+
+#game-section .game-note {
+  margin: 16px 0 0;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+/* 印刷最適化 */
+@media print {
+  nav.toc {
+    break-inside: avoid
+  }
+
+  .card {
+    break-inside: avoid
+  }
+
+  a[href]:after {
+    content: " (" attr(href) ")";
+    font-size: 12px
+  }
+}
+
+.toc-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.toc-group {
+  background: var(--card, #f6f8fb);
+  border-radius: 10px;
+  padding: 18px 18px 10px 18px;
+  box-shadow: 0 1px 4px rgba(30, 102, 245, .06);
+  min-width: 220px;
+  flex: 1;
+}
+
+.toc-label {
+  font-size: 15px;
+  font-weight: bold;
+  color: var(--brand, #1e66f5);
+  margin-bottom: 8px;
+  letter-spacing: 0.07em;
+}
+
+.toc-group ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.toc-group li {
+  margin: 0 0 9px 0;
+}
+
+.toc-group li:last-child {
+  margin-bottom: 0;
+}
+
+.toc-group a {
+  display: flex;
+  align-items: center;
+  padding: 8px 10px 8px 0;
+  border-radius: 6px;
+  transition: background 0.18s;
+  font-size: 16px;
+  color: var(--ink, #1b1f24);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.toc-group a:hover {
+  background: #eef3ff;
+  color: var(--brand, #1e66f5);
+  text-decoration: underline;
+}
+
+.toc-num {
+  display: inline-block;
+  min-width: 26px;
+  font-weight: bold;
+  color: var(--brand, #1e66f5);
+}
+
+/* ケースセクション */
+#cases {
+  padding: 2em 0;
+}
+
+#cases .grid {
+  display: grid;
+  gap: 2.5em;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  align-items: stretch;
+}
+
+/* ファンシーカード共通スタイル */
+.fancy-card {
+  border-radius: 1.3em;
+  border: none;
+  padding: 2em 1.5em 1.5em;
+  box-shadow: 0 4px 18px 3px rgba(0, 0, 0, 0.1);
+}
+
+.fancy-card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.9em;
+  margin-bottom: 0.65em;
+}
+
+.fancy-card-number {
+  width: 2.4em;
+  height: 2.4em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100%;
+  font-size: 1.4em;
+  font-weight: bold;
+  color: #fff;
+}
+
+.fancy-card h3 {
+  margin: 0;
+  font-size: 1.2em;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.fancy-card-summary {
+  margin: 0.6em 0 1.1em 0;
+  font-size: 1.07em;
+}
+
+.fancy-card-summary strong {
+  display: inline;
+}
+
+.fancy-card .points {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.3em 0;
+}
+
+.fancy-card .points li {
+  margin-bottom: 0.5em;
+  display: flex;
+  align-items: flex-start;
+}
+
+.fancy-card .points li:last-child {
+  margin-bottom: 0;
+}
+
+.fancy-card .points li span {
+  font-weight: bold;
+  font-size: 1.2em;
+  margin-right: 0.5em;
+}
+
+.fancy-card-example {
+  padding: 0.6em 0.9em;
+  margin-bottom: 1.25em;
+  font-size: 0.98em;
+  border-radius: 0.5em 0.3em 0.3em 0.5em;
+  border-left: 4px solid;
+}
+
+.fancy-card-example strong {
+  display: inline;
+}
+
+.fancy-card-button {
+  display: inline-block;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 0.9em;
+  padding: 0.55em 1.2em;
+  font-size: 1em;
+  text-decoration: none;
+  transition: 0.15s;
+}
+
+.fancy-card-button:hover {
+  text-decoration: none;
+  opacity: 0.9;
+}
+
+.fancy-card-button-link {
+  margin: 0;
+}
+
+/* ケース1（テスト問題・小テスト作成） */
+#case1 {
+  background: #e0ecfd;
+  box-shadow: 0 4px 18px 3px rgba(4, 80, 200, 0.2);
+}
+
+#case1 .fancy-card-number {
+  background: var(--brand, #1e66f5);
+  box-shadow: 0 1px 7px 1px rgba(30, 102, 245, 0.4);
+}
+
+#case1 .fancy-card-summary strong {
+  color: #1976d2;
+}
+
+#case1 .fancy-card .points li span {
+  color: var(--brand, #1e66f5);
+}
+
+#case1 .fancy-card-example {
+  background: #fff;
+  border-left-color: var(--brand, #1e66f5);
+}
+
+#case1 .fancy-card-example strong {
+  color: #c99200;
+}
+
+#case1 .fancy-card-button {
+  background: var(--brand, #1e66f5);
+}
+
+/* ケース2（席替え支援） */
+#case2 {
+  background: #ede7fc;
+  box-shadow: 0 4px 18px 3px rgba(86, 62, 183, 0.2);
+}
+
+#case2 .fancy-card-number {
+  background: #834fe6;
+  box-shadow: 0 1px 7px 1px rgba(131, 79, 230, 0.7);
+}
+
+#case2 .fancy-card-summary strong {
+  color: #663bbb;
+}
+
+#case2 .fancy-card .points li span {
+  color: #563eb7;
+}
+
+#case2 .fancy-card-example {
+  background: #fff;
+  border-left-color: #563eb7;
+}
+
+#case2 .fancy-card-example strong {
+  color: #6045b1;
+}
+
+#case2 .fancy-card-button {
+  background: #563eb7;
+}
+
+/* ケース3（語呂合わせ・トリビア生成） */
+#case3 {
+  background: #e3faef;
+  box-shadow: 0 4px 18px 3px rgba(23, 180, 99, 0.2);
+}
+
+#case3 .fancy-card-number {
+  background: #17b463;
+  box-shadow: 0 1px 7px 1px rgba(23, 180, 99, 0.4);
+}
+
+#case3 .fancy-card-summary strong {
+  color: #0a8a48;
+}
+
+#case3 .fancy-card .points li span {
+  color: #0fa74d;
+}
+
+#case3 .fancy-card-example {
+  background: #fff;
+  border-left-color: #17b463;
+}
+
+#case3 .fancy-card-example strong {
+  color: #0fa74d;
+}
+
+#case3 .fancy-card-button {
+  background: #17b463;
+}
+
+/* ケース4（画像生成） */
+#case4 {
+  background: #fef7e3;
+  box-shadow: 0 4px 18px 3px rgba(201, 146, 0, 0.2);
+}
+
+#case4 .fancy-card-number {
+  background: #c99200;
+  box-shadow: 0 1px 7px 1px rgba(201, 146, 0, 0.4);
+}
+
+#case4 .fancy-card-summary strong {
+  color: #ad8200;
+}
+
+#case4 .fancy-card .points li span {
+  color: #c99200;
+}
+
+#case4 .fancy-card-example {
+  background: #fff;
+  border-left-color: #c99200;
+}
+
+#case4 .fancy-card-example strong {
+  color: #c99200;
+}
+
+#case4 .fancy-card-button {
+  background: #c99200;
+}
+
+/* ゲームセクション内のスタイル */
+#game-section .game-info-box p {
+  margin: 0 0 12px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+/* 目次内の絵文字 */
+.toc-emoji {
+  font-size: 1.2em;
+}

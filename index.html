@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>AIと共にデザインする理科授業</title>
+  <meta name="description" content="理科授業と校務でのAI活用実践を紹介。テスト作成、席替え支援、語呂合わせ・トリビア生成、画像生成、教材デザイン。">
+  <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body>
+  <div class="wrap">
+
+    <header>
+      <h1>AIと共にデザインする理科授業 <span class="badge">実践紹介</span></h1>
+      <p class="lead">
+        AIを“授業を共にデザインするパートナー”として位置づけ、理科教育の新たな可能性を探る実践を紹介します。授業準備や資料作成の効率化だけでなく、AIが新しい問いや学びのきっかけを生み出すツールとして機能しています。</p>
+    </header>
+
+    <nav class="toc" aria-label="目次">
+      <h2>目次</h2>
+      <div class="toc-section">
+        <div class="toc-group">
+          <div class="toc-label">実践紹介</div>
+          <ul>
+            <li><a href="#case1"><span class="toc-num">1.</span> テスト問題・小テスト作成</a></li>
+            <li><a href="#case2"><span class="toc-num">2.</span> 席替え支援</a></li>
+            <li><a href="#case3"><span class="toc-num">3.</span> 語呂合わせ・トリビア生成</a></li>
+            <li><a href="#case4"><span class="toc-num">4.</span> 画像生成</a></li>
+          </ul>
+        </div>
+        <div class="toc-group">
+          <div class="toc-label">情報・ツール</div>
+          <ul>
+            <li><a href="#ai-glossary"><span class="toc-num">5.</span> AI用語の解説</a></li>
+            <li><a href="game.html"><span class="toc-num">6.</span> AI理解度・活用度チェッククイズ <span class="toc-emoji">🎮</span></a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <section id="overview">
+      <h2>展示テーマ概要</h2>
+      <p class="summary">
+        教師の時間を「考えること・創ること」に還元し、生徒の興味と探究心を引き出す“考える理科授業”へ。<br>
+        本ページでは、現場で再現できる5つの具体的活用事例を紹介します。
+      </p>
+    </section>
+
+    <section id="cases">
+      <div class="grid">
+        
+        <article class="card fancy-card" id="case1">
+          <div class="fancy-card-header">
+            <div class="fancy-card-number">1</div>
+            <h3>テスト問題・小テスト作成</h3>
+          </div>
+          <p class="fancy-card-summary"><strong>概要：</strong>単元名を入力するだけで、問題・解答・解説を自動生成。出題形式や難易度を調整し、すぐに印刷・共有可能。</p>
+          <ul class="points">
+            <li><span>✔</span>単元名と条件を入力するだけで問題を自動生成</li>
+            <li><span>✔</span>記述式や選択式など形式を指定できる</li>
+            <li><span>✔</span>解答・解説も自動生成で時短化</li>
+            <li><span>✔</span>小テストならプログラミングでGoogleフォームを出力可</li>
+          </ul>
+          <div class="fancy-card-example">
+            <strong>活用例：</strong> 小テストはGoogleフォーム化。テスト問題も一瞬で参考問題を作成。
+          </div>
+          <p class="fancy-card-button-link">
+            <a href="prompts/case1-prompt.html" class="fancy-card-button">▶ プロンプト例を見る</a>
+          </p>
+        </article>
+
+        <article class="card fancy-card" id="case2">
+          <div class="fancy-card-header">
+            <div class="fancy-card-number">2</div>
+            <h3>席替え支援</h3>
+          </div>
+          <p class="fancy-card-summary"><strong>概要：</strong>性別・リーダー・成績バランスなどの条件を指定し、公平で効率的な座席配置をAIが自動提案。</p>
+          <ul class="points">
+            <li><span>✔</span>各班にリーダーを配置するなど条件設定が可能</li>
+            <li><span>✔</span>バランスの取れた座席表を表形式で出力</li>
+            <li><span>✔</span>公平性と合理性を両立</li>
+          </ul>
+          <div class="fancy-card-example">
+            <strong>活用例：</strong> 章ごとに席替えを実施し交流を活性化。頻度が多い分はAIで時短。
+          </div>
+          <p class="fancy-card-button-link">
+            <a href="prompts/case2-prompt.html" class="fancy-card-button">▶ プロンプト例を見る</a>
+          </p>
+        </article>
+
+        <article class="card fancy-card" id="case3">
+          <div class="fancy-card-header">
+            <div class="fancy-card-number">3</div>
+            <h3>語呂合わせ・トリビア生成</h3>
+          </div>
+          <p class="fancy-card-summary"><strong>概要：</strong>理科用語を楽しく覚える語呂合わせや豆知識をAIが提案。生徒と一緒に語呂を改良する活動にも活用可能。</p>
+          <ul class="points">
+            <li><span>✔</span>覚えにくい用語を楽しく記憶</li>
+            <li><span>✔</span>AIが複数案を提示し、生徒が選択・改良</li>
+            <li><span>✔</span>学びの主体性を促す活動に発展</li>
+          </ul>
+          <div class="fancy-card-example">
+            <strong>活用例：</strong> 例を出してから、生徒自身にも語呂を考えさせる。
+          </div>
+          <p class="fancy-card-button-link">
+            <a href="prompts/case3-prompt.html" class="fancy-card-button">▶ プロンプト例を見る</a>
+          </p>
+        </article>
+
+        <article class="card fancy-card" id="case4">
+          <div class="fancy-card-header">
+            <div class="fancy-card-number">4</div>
+            <h3>画像生成</h3>
+          </div>
+          <p class="fancy-card-summary"><strong>概要：</strong>実験装置や科学現象をAIが教材用にビジュアル化。危険な実験や抽象的な概念も安全に理解できるよう支援。</p>
+          <ul class="points">
+            <li><span>✔</span>実験装置や現象をわかりやすく可視化</li>
+            <li><span>✔</span>生成画像をスライドやプリントに活用</li>
+            <li><span>✔</span>授業の安全性・視覚的理解を向上</li>
+          </ul>
+          <div class="fancy-card-example">
+            <strong>活用例：</strong> 授業で必要な動画や画像をすぐに生成。
+          </div>
+          <p class="fancy-card-button-link">
+            <a href="prompts/case4-prompt.html" class="fancy-card-button">▶ プロンプト例を見る</a>
+          </p>
+        </article>
+
+      </div>
+    </section>
+
+    <section id="ai-glossary">
+      <h2>AI用語の解説</h2>
+      <p class="summary">
+        本サイトで使用しているAI関連の用語を分かりやすく解説します。初めてAIを活用する際の参考にしてください。
+      </p>
+
+      <div class="grid">
+        <div class="glossary-item">
+          <div class="glossary-term">AI（人工知能）</div>
+          <div class="glossary-definition">Artificial
+            Intelligence（人工知能）の略。人間の知的な作業を模倣するコンピュータシステムのこと。画像認識、自然言語処理、意思決定などのタスクを実行できます。</div>
+        </div>
+
+        <div class="glossary-item">
+          <div class="glossary-term">プロンプト</div>
+          <div class="glossary-definition">AIに対して指示や質問を伝える文章のこと。「プロンプト」は「促す、引き出す」という意味で、AIに何を作成してほしいかを明確に伝えるための入力文です。
+          </div>
+        </div>
+
+        <div class="glossary-item">
+          <div class="glossary-term">生成AI</div>
+          <div class="glossary-definition">テキスト、画像、動画などのコンテンツを自動で生成するAI技術。大規模なデータから学習し、新しいコンテンツを創造的に生み出します。</div>
+        </div>
+
+        <div class="glossary-item">
+          <div class="glossary-term">LLM（大規模言語モデル）</div>
+          <div class="glossary-definition">Large Language
+            Model（大規模言語モデル）の略。膨大なテキストデータから学習したAIモデルで、自然な文章の生成や理解が可能です。ChatGPT、Claude、Geminiなどが代表例です。</div>
+        </div>
+
+        <div class="glossary-item">
+          <div class="glossary-term">チャットボット</div>
+          <div class="glossary-definition">会話形式でユーザーと対話するAIプログラム。質問に答えたり、タスクを実行したりする対話型のインターフェースを提供します。</div>
+        </div>
+
+        <div class="glossary-item">
+          <div class="glossary-term">トークン</div>
+          <div class="glossary-definition">AIがテキストを処理する際の最小単位。単語や文字の塊として扱われ、AIの入力・出力の量を測る単位として使用されます。</div>
+        </div>
+
+        <div class="glossary-item">
+          <div class="glossary-term">ファインチューニング</div>
+          <div class="glossary-definition">既存のAIモデルを特定のタスクや分野に特化させるために、追加のデータで再学習させること。専門的な用途に最適化する技術です。</div>
+        </div>
+
+        <div class="glossary-item">
+          <div class="glossary-term">出力形式</div>
+          <div class="glossary-definition">AIに生成してほしい内容の形式や構造を指定すること。「表形式で出力」「箇条書きで出力」など、具体的な形式を指示することで、使いやすい結果を得られます。
+          </div>
+        </div>
+
+        <div class="glossary-item">
+          <div class="glossary-term">コンテキスト</div>
+          <div class="glossary-definition">会話や生成の文脈、背景情報のこと。AIは直前の会話履歴やプロンプト全体から文脈を理解し、適切な回答を生成します。</div>
+        </div>
+
+        <div class="glossary-item">
+          <div class="glossary-term">ハルシネーション</div>
+          <div class="glossary-definition">AIが事実に基づかない情報を生成してしまう現象。「幻覚」を意味する言葉で、AIが自信を持って間違った情報を提示することがあります。</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ゲームセクション -->
+    <section id="game-section">
+      <div class="game-content">
+        <h2>🎮 AI理解度・活用度チェッククイズ</h2>
+        <p class="game-description">
+          AIに関する知識と実践的な活用スキルを測定できるクイズゲームです。<br>
+          クイズ問題とプロンプト作成の実践問題に挑戦して、あなたのAI理解度を確認しましょう。
+        </p>
+        <div class="game-info-box">
+          <p>ゲームの内容</p>
+          <ul>
+            <li>AI基礎知識クイズ（5問）</li>
+            <li>プロンプト作成実践問題（1問）</li>
+            <li>合計6問でスコアを算出</li>
+            <li>結果に応じたレベル判定とフィードバック</li>
+          </ul>
+        </div>
+        <a href="game.html" class="game-button">
+          🎯 ゲームを開始する
+        </a>
+      </div>
+    </section>
+
+    <footer>
+      © 2025 AIと共にデザインする理科授業 / 配布・転載歓迎（出典明記）
+    </footer>
+
+  </div>
+</body>
+
+</html>

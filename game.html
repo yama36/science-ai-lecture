@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>AI理解度・活用度チェッククイズ</title>
+  <meta name="description" content="ゲーム形式でAIの理解や活用度を測定できるクイズページ。">
+  <link rel="stylesheet" href="css/game.css">
+</head>
+
+<body>
+  <div class="wrap">
+
+    <header>
+      <h1>AI理解度・活用度チェッククイズ <span class="badge">ゲーム</span></h1>
+      <p class="lead">クイズと実践問題で、あなたのAI理解度と活用スキルを測定します。全問正解を目指してチャレンジ！</p>
+    </header>
+
+    <a href="index.html" class="back-link">← ホームに戻る</a>
+
+    <!-- 開始画面 -->
+    <section class="start-screen" id="startScreen">
+      <h2>ゲームの説明</h2>
+      <p class="start-description">
+        このゲームでは、AIに関する知識と実践的な活用スキルを測定します。<br>
+        クイズ問題とプロンプト作成の実践問題に挑戦して、あなたのAI理解度を確認しましょう。
+      </p>
+      <div class="game-info">
+        <h3>ゲームの内容</h3>
+        <ul>
+          <li>AI基礎知識クイズ（5問）</li>
+          <li>プロンプト作成実践問題（1問）</li>
+          <li>合計6問でスコアを算出</li>
+          <li>結果に応じたレベル判定とフィードバック</li>
+        </ul>
+      </div>
+      <button class="btn" onclick="startGame()">ゲームを開始する</button>
+    </section>
+
+    <!-- ゲーム画面 -->
+    <section class="game-container" id="gameContainer">
+      <div class="question-counter">
+        <span id="currentQuestion">1</span> / <span id="totalQuestions">7</span>
+      </div>
+      <div class="progress-bar">
+        <div class="progress-fill" id="progressBar" style="width:0%"></div>
+      </div>
+
+      <!-- クイズ問題 -->
+      <div class="question-card" id="quizCard">
+        <div class="question-title" id="questionTitle"></div>
+        <ul class="options" id="optionsList"></ul>
+        <div class="feedback" id="feedback">
+          <div class="feedback-title" id="feedbackTitle"></div>
+          <div class="feedback-text" id="feedbackText"></div>
+        </div>
+        <button class="btn" id="nextBtn" onclick="nextQuestion()" disabled>次へ</button>
+        <button class="btn btn-secondary" id="checkBtn" onclick="checkAnswer()" style="display:none">答えを確認</button>
+      </div>
+
+      <!-- プロンプト実践問題 -->
+      <div class="question-card prompt-practice" id="promptCard">
+        <div class="question-title" id="promptTitle"></div>
+        <div class="prompt-hint" id="promptHint"></div>
+        <div class="prompt-example" id="promptExample" style="display:none"></div>
+        <textarea class="prompt-input" id="promptInput" placeholder="ここにプロンプトを入力してください..."></textarea>
+        <div class="feedback" id="promptFeedback">
+          <div class="feedback-title" id="promptFeedbackTitle"></div>
+          <div class="feedback-text" id="promptFeedbackText"></div>
+        </div>
+        <button class="btn" id="promptNextBtn" onclick="nextQuestion()" disabled>次へ</button>
+        <button class="btn btn-secondary" id="promptCheckBtn" onclick="checkPrompt()">回答を確認</button>
+      </div>
+    </section>
+
+    <!-- 結果画面 -->
+    <section class="result-screen" id="resultScreen">
+      <h2>結果発表</h2>
+      <div class="score-circle">
+        <div>
+          <div class="score-text" id="scoreText">0</div>
+          <div class="score-label">点</div>
+        </div>
+      </div>
+      <div class="result-message" id="resultMessage"></div>
+      <div class="level-badge" id="levelBadge"></div>
+      <div class="result-details">
+        <h3>詳細結果</h3>
+        <div class="result-stats">
+          <div class="stat-item">
+            <div class="stat-value" id="correctCount">0</div>
+            <div class="stat-label">正解数</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-value" id="totalCount">6</div>
+            <div class="stat-label">総問題数</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-value" id="accuracyRate">0%</div>
+            <div class="stat-label">正答率</div>
+          </div>
+        </div>
+        <div id="resultDetails"></div>
+      </div>
+      <button class="btn" onclick="restartGame()">もう一度挑戦する</button>
+      <a href="index.html" class="btn btn-secondary">ホームに戻る</a>
+    </section>
+
+    <footer>
+      © 2025 AIと共にデザインする理科授業 / 配布・転載歓迎（出典明記）
+    </footer>
+
+  </div>
+
+  <script src="js/game.js"></script>
+</body>
+
+</html>

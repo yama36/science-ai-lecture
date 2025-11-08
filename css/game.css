@@ -1,0 +1,135 @@
+:root{
+  --brand:#1e66f5;
+  --brand-light:#8ab1fa;
+  --ink:#1b1f24;
+  --muted:#5b6773;
+  --bg:#ffffff;
+  --card:#f6f8fb;
+  --success:#4caf50;
+  --error:#f44336;
+  --warning:#ff9800;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,Segoe UI,Roboto,"Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif;line-height:1.7}
+a{color:var(--brand);text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:1000px;margin:0 auto;padding:24px}
+header{padding:20px 0 12px;border-bottom:3px solid var(--brand)}
+h1{font-size:clamp(22px,4vw,34px);margin:0 0 8px}
+.lead{color:var(--muted);font-size:clamp(14px,2.2vw,18px)}
+.back-link{margin:20px 0;padding:8px 12px;background:var(--card);border-radius:8px;display:inline-block;font-size:14px}
+section{margin:30px 0;padding:0}
+h2{font-size:clamp(18px,2.6vw,24px);margin:0 0 6px;padding-top:10px;border-left:6px solid var(--brand);padding-left:10px}
+.card{background:#fff;border:1px solid #e8eef7;border-radius:14px;padding:16px 18px;margin:18px 0;box-shadow:0 2px 10px rgba(30,102,245,.05)}
+.card h3{margin:0 0 6px;font-size:clamp(16px,2.4vw,20px)}
+
+/* ゲーム画面 */
+.game-container{display:none}
+.game-container.active{display:block}
+.progress-bar{width:100%;height:8px;background:#e8eef7;border-radius:999px;margin:20px 0;overflow:hidden}
+.progress-fill{height:100%;background:linear-gradient(90deg,var(--brand),var(--brand-light));transition:width 0.3s;border-radius:999px}
+.question-counter{text-align:right;color:var(--muted);font-size:14px;margin-bottom:10px}
+.question-card{background:#fff;border:2px solid var(--brand);border-radius:16px;padding:24px;margin:20px 0;box-shadow:0 4px 16px rgba(30,102,245,.1)}
+.question-title{font-size:20px;font-weight:700;margin:0 0 16px;color:var(--ink)}
+.options{list-style:none;padding:0;margin:16px 0}
+.option{background:var(--card);border:2px solid #e8eef7;border-radius:12px;padding:14px 18px;margin:10px 0;cursor:pointer;transition:all 0.2s;display:flex;align-items:center;gap:12px}
+.option:hover{background:#eef3ff;border-color:var(--brand-light);transform:translateX(4px)}
+.option.selected{background:#eef3ff;border-color:var(--brand);box-shadow:0 2px 8px rgba(30,102,245,.2)}
+.option.correct{background:#e8f5e9;border-color:var(--success);color:var(--success)}
+.option.incorrect{background:#ffebee;border-color:var(--error);color:var(--error)}
+.option input[type="radio"]{width:20px;height:20px;cursor:pointer}
+.option label{cursor:pointer;flex:1;font-size:16px}
+.btn{background:var(--brand);color:#fff;border:none;border-radius:10px;padding:12px 24px;font-size:16px;font-weight:600;cursor:pointer;transition:all 0.2s;display:inline-block;margin:10px 5px}
+.btn:hover{background:#1557d4;transform:translateY(-2px);box-shadow:0 4px 12px rgba(30,102,245,.3)}
+.btn:disabled{background:#ccc;cursor:not-allowed;transform:none}
+.btn-secondary{background:var(--muted)}
+.btn-secondary:hover{background:#4a5561}
+.feedback{background:#fff9e6;border:2px solid var(--warning);border-radius:12px;padding:16px;margin:20px 0;display:none}
+.feedback.show{display:block;animation:slideIn 0.3s}
+.feedback.correct{background:#e8f5e9;border-color:var(--success)}
+.feedback.incorrect{background:#ffebee;border-color:var(--error)}
+@keyframes slideIn{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:translateY(0)}}
+.feedback-title{font-weight:700;margin:0 0 8px;font-size:18px}
+.feedback-text{margin:0;line-height:1.6}
+
+/* 結果画面 */
+.result-screen{display:none;text-align:center;padding:40px 20px}
+.result-screen.active{display:block}
+.score-circle{width:200px;height:200px;border-radius:50%;background:linear-gradient(135deg,var(--brand),var(--brand-light));display:flex;align-items:center;justify-content:center;margin:30px auto;box-shadow:0 8px 24px rgba(30,102,245,.3)}
+.score-text{font-size:48px;font-weight:700;color:#fff}
+.score-label{font-size:18px;color:#fff;opacity:0.9;margin-top:8px}
+.result-message{font-size:24px;font-weight:700;margin:30px 0 20px;color:var(--ink)}
+.result-details{background:var(--card);border-radius:16px;padding:24px;margin:30px 0;text-align:left}
+.result-details h3{margin:0 0 16px;font-size:20px}
+.result-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:16px;margin:20px 0}
+.stat-item{background:#fff;border-radius:12px;padding:16px;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,.05)}
+.stat-value{font-size:32px;font-weight:700;color:var(--brand);margin:8px 0}
+.stat-label{font-size:14px;color:var(--muted)}
+.level-badge{display:inline-block;padding:8px 20px;border-radius:999px;font-weight:600;font-size:16px;margin:20px 0}
+.level-beginner{background:#fff3cd;color:#856404}
+.level-intermediate{background:#d1ecf1;color:#0c5460}
+.level-advanced{background:#d4edda;color:#155724}
+.level-expert{background:#e2e3f5;color:#383d41}
+
+/* 開始画面 */
+.start-screen{text-align:center;padding:40px 20px}
+.start-screen h2{text-align:center;border:none;padding:0;margin:0 0 20px}
+.start-description{max-width:600px;margin:0 auto 30px;color:var(--muted);line-height:1.8}
+.game-info{background:var(--card);border-radius:16px;padding:24px;margin:30px 0;text-align:left;max-width:600px;margin-left:auto;margin-right:auto}
+.game-info h3{margin:0 0 16px;font-size:18px}
+.game-info ul{list-style:none;padding:0;margin:0}
+.game-info li{padding:8px 0;padding-left:28px;position:relative}
+.game-info li::before{content:"✓";position:absolute;left:0;color:var(--success);font-weight:700}
+
+/* プロンプト実践問題 */
+.prompt-practice{display:none}
+.prompt-practice.active{display:block}
+.prompt-input{width:100%;min-height:150px;padding:16px;border:2px solid #e8eef7;border-radius:12px;font-family:'Courier New',monospace;font-size:14px;line-height:1.6;resize:vertical;margin:16px 0}
+.prompt-input:focus{outline:none;border-color:var(--brand);box-shadow:0 0 0 3px rgba(30,102,245,.1)}
+.prompt-hint{background:#f0f7ff;border-left:4px solid var(--brand);border-radius:8px;padding:12px 16px;margin:16px 0;font-size:14px}
+.prompt-hint strong{display:block;margin-bottom:6px;color:var(--brand)}
+.prompt-example{background:#f9fafb;border:1px solid #e1e8f0;border-radius:12px;padding:16px;margin:16px 0;font-family:'Courier New',monospace;font-size:13px;line-height:1.6;white-space:pre-wrap;overflow-x:auto}
+
+footer{margin:40px 0 20px;color:var(--muted);font-size:14px;text-align:center}
+
+/* バッジスタイル */
+h1 .badge,
+h1 span.badge {
+  display: inline-block;
+  background: var(--brand);
+  color: #fff;
+  padding: 2px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  margin-left: 6px;
+}
+
+/* 結果詳細のスタイル */
+.result-details h4 {
+  margin-top: 20px;
+}
+
+.result-details ul {
+  list-style: none;
+  padding: 0;
+  margin: 16px 0;
+}
+
+.result-details li {
+  padding: 8px 0;
+  border-bottom: 1px solid #e8eef7;
+}
+
+.result-details li span {
+  font-weight: 700;
+  margin-right: 8px;
+}
+
+.result-correct {
+  color: var(--success);
+}
+
+.result-incorrect {
+  color: var(--error);
+}
