@@ -8,11 +8,11 @@
 }
 
 * {
-  box-sizing: border-box
+  box-sizing: border-box;
 }
 
 html {
-  scroll-behavior: smooth
+  scroll-behavior: smooth;
 }
 
 html,
@@ -21,23 +21,24 @@ body {
   padding: 0;
   background: var(--bg);
   color: var(--ink);
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, "Hiragino Kaku Gothic ProN", "Noto Sans JP", sans-serif;
-  line-height: 1.7
+  font-family: system-ui, -apple-system, Segoe UI, Roboto,
+    "Hiragino Kaku Gothic ProN", "Noto Sans JP", sans-serif;
+  line-height: 1.7;
 }
 
 a {
   color: var(--brand);
-  text-decoration: none
+  text-decoration: none;
 }
 
 a:hover {
-  text-decoration: underline
+  text-decoration: underline;
 }
 
 .wrap {
   max-width: 1000px;
   margin: 0 auto;
-  padding: 24px
+  padding: 24px;
 }
 
 header {
@@ -93,7 +94,7 @@ header {
 }
 
 /* デスクトップ表示：画像の上にタイトルとリード文を重ねる */
-@media(min-width: 800px) {
+@media (min-width: 800px) {
   .hero-image {
     position: relative;
   }
@@ -134,11 +135,11 @@ header {
 
 h1 {
   font-size: clamp(22px, 4vw, 34px);
-  margin: 0 0 8px
+  margin: 0 0 8px;
 }
 
 .lead {
-  font-size: clamp(14px, 2.2vw, 18px)
+  font-size: clamp(14px, 2.2vw, 18px);
 }
 
 nav.toc {
@@ -146,22 +147,22 @@ nav.toc {
   padding: 12px 16px;
   background: var(--card);
   border: 1px solid #e6ecf5;
-  border-radius: 12px
+  border-radius: 12px;
 }
 
 nav.toc h2 {
   font-size: 18px;
-  margin: 0 0 8px
+  margin: 0 0 8px;
 }
 
 nav.toc ul {
   margin: 0;
-  padding-left: 18px
+  padding-left: 18px;
 }
 
 section {
   margin: 30px 0;
-  padding: 0
+  padding: 0;
 }
 
 h2 {
@@ -169,7 +170,7 @@ h2 {
   margin: 0 0 6px;
   padding-top: 10px;
   border-left: 6px solid var(--brand);
-  padding-left: 10px
+  padding-left: 10px;
 }
 
 .summary {
@@ -178,7 +179,7 @@ h2 {
   border: 1px solid #dbe6ff;
   border-radius: 10px;
   padding: 12px 14px;
-  margin: 10px 0 20px
+  margin: 10px 0 20px;
 }
 
 .card {
@@ -187,12 +188,12 @@ h2 {
   border-radius: 14px;
   padding: 16px 18px;
   margin: 18px 0;
-  box-shadow: 0 2px 10px rgba(30, 102, 245, .05)
+  box-shadow: 0 2px 10px rgba(30, 102, 245, 0.05);
 }
 
 .card h3 {
   margin: 0 0 6px;
-  font-size: clamp(16px, 2.4vw, 20px)
+  font-size: clamp(16px, 2.4vw, 20px);
 }
 
 .badge {
@@ -202,37 +203,37 @@ h2 {
   padding: 2px 10px;
   border-radius: 999px;
   font-size: 12px;
-  margin-left: 6px
+  margin-left: 6px;
 }
 
 .points {
   margin: 10px 0 0;
-  padding-left: 20px
+  padding-left: 20px;
 }
 
 .points li {
-  margin: 4px 0
+  margin: 4px 0;
 }
 
 .example {
   margin-top: 10px;
-  color: var(--muted)
+  color: var(--muted);
 }
 
 footer {
   margin: 40px 0 20px;
   color: var(--muted);
-  font-size: 14px
+  font-size: 14px;
 }
 
 .grid {
   display: grid;
-  gap: 16px
+  gap: 16px;
 }
 
-@media(min-width:800px) {
+@media (min-width: 800px) {
   .grid {
-    grid-template-columns: 1fr 1fr
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   }
 }
 
@@ -243,13 +244,14 @@ footer {
   border-radius: 8px;
   padding: 20px 24px;
   margin: 16px 0;
-  box-shadow: 0 1px 3px rgba(30, 102, 245, .08);
-  transition: all 0.3s
+  box-shadow: 0 1px 3px rgba(30, 102, 245, 0.08);
+  transition: all 0.3s;
+  min-width: 280px;
 }
 
 #ai-glossary .glossary-item:hover {
-  box-shadow: 0 4px 12px rgba(30, 102, 245, .15);
-  transform: translateY(-2px)
+  box-shadow: 0 4px 12px rgba(30, 102, 245, 0.15);
+  transform: translateY(-2px);
 }
 
 #ai-glossary .glossary-term {
@@ -261,20 +263,20 @@ footer {
   border-bottom: 2px solid #e8eef7;
   display: flex;
   align-items: center;
-  gap: 8px
+  gap: 8px;
 }
 
 #ai-glossary .glossary-term::before {
   content: "🔤";
   font-size: 20px;
-  opacity: 0.7
+  opacity: 0.7;
 }
 
 #ai-glossary .glossary-definition {
   color: var(--ink);
   margin: 12px 0;
   line-height: 1.8;
-  padding-left: 4px
+  padding-left: 4px;
 }
 
 #ai-glossary .glossary-usage {
@@ -284,7 +286,7 @@ footer {
   padding: 12px 16px;
   margin-top: 14px;
   font-size: 14px;
-  color: var(--ink)
+  color: var(--ink);
 }
 
 #ai-glossary .glossary-usage strong {
@@ -293,17 +295,17 @@ footer {
   margin-bottom: 6px;
   font-size: 13px;
   text-transform: uppercase;
-  letter-spacing: 0.5px
+  letter-spacing: 0.5px;
 }
 
 #ai-glossary .grid {
   grid-template-columns: 1fr;
-  gap: 12px
+  gap: 12px;
 }
 
-@media(min-width:800px) {
+@media (min-width: 800px) {
   #ai-glossary .grid {
-    grid-template-columns: 1fr 1fr
+    grid-template-columns: 1fr 1fr;
   }
 }
 
@@ -314,12 +316,12 @@ footer {
   background: linear-gradient(135deg, #eef3ff 0%, #f8f9fb 100%);
   border: 2px solid var(--brand);
   border-radius: 16px;
-  box-shadow: 0 4px 20px rgba(30, 102, 245, .15);
+  box-shadow: 0 4px 20px rgba(30, 102, 245, 0.15);
   transition: all 0.3s;
 }
 
 #game-section:hover {
-  box-shadow: 0 6px 24px rgba(30, 102, 245, .25);
+  box-shadow: 0 6px 24px rgba(30, 102, 245, 0.25);
   transform: translateY(-2px);
 }
 
@@ -349,7 +351,7 @@ footer {
   border-radius: 12px;
   padding: 20px;
   margin: 20px 0;
-  box-shadow: 0 2px 10px rgba(30, 102, 245, .1);
+  box-shadow: 0 2px 10px rgba(30, 102, 245, 0.1);
 }
 
 #game-section .game-info-box ul {
@@ -370,14 +372,14 @@ footer {
   font-weight: 700;
   text-decoration: none;
   transition: all 0.3s;
-  box-shadow: 0 4px 12px rgba(30, 102, 245, .3);
+  box-shadow: 0 4px 12px rgba(30, 102, 245, 0.3);
   margin-top: 10px;
 }
 
 #game-section .game-button:hover {
   background: #1557d4;
   transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(30, 102, 245, .4);
+  box-shadow: 0 6px 16px rgba(30, 102, 245, 0.4);
   text-decoration: none;
 }
 
@@ -390,16 +392,16 @@ footer {
 /* 印刷最適化 */
 @media print {
   nav.toc {
-    break-inside: avoid
+    break-inside: avoid;
   }
 
   .card {
-    break-inside: avoid
+    break-inside: avoid;
   }
 
   a[href]:after {
     content: " (" attr(href) ")";
-    font-size: 12px
+    font-size: 12px;
   }
 }
 
@@ -413,7 +415,7 @@ footer {
   background: var(--card, #f6f8fb);
   border-radius: 10px;
   padding: 18px 18px 10px 18px;
-  box-shadow: 0 1px 4px rgba(30, 102, 245, .06);
+  box-shadow: 0 1px 4px rgba(30, 102, 245, 0.06);
   min-width: 220px;
   flex: 1;
 }
@@ -751,6 +753,7 @@ footer {
   color: var(--ink);
   transition: all 0.3s;
   box-shadow: 0 2px 8px rgba(30, 102, 245, 0.1);
+  min-width: 48%;
 }
 
 .ai-service-link:hover {
@@ -808,7 +811,7 @@ footer {
 }
 
 .ai-service-modal-content > div {
-  margin:0 0 0.5em;
+  margin: 0 0 0.5em;
 }
 
 .ai-service-modal-content a {
@@ -850,4 +853,21 @@ footer {
 
 #closeModalBtn:hover {
   color: var(--ink);
+}
+
+/* 要素数が奇数の場合、最後の要素を中央寄せ（SPのみ） */
+@media (max-width: 799px) {
+  .ai-services-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: stretch;
+  }
+  
+  /* 要素数が奇数の場合、最後の要素を中央寄せ */
+  /* 2カラムグリッドで最後の要素が1つだけの場合（要素数が奇数の場合） */
+  .ai-services-grid > .ai-service-link:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+    justify-self: center;
+    max-width: 200px;
+  }
 }
